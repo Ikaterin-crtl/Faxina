@@ -1,0 +1,80 @@
+/* CSS para a página inicial */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF; /* Fundo branco */
+    color: #FFD700; /* Dourado para os elementos */
+    overflow: hidden; /* Evita barras de rolagem */
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título com fonte de runas */
+.titulo {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 36px; /* Tamanho maior para destaque */
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Ícone no centro */
+.icon-central {
+    width: 120px;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Botão estilo pixel */
+.botao {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #000;
+    border: 4px solid #000;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0px 0px 8px 2px #FFD700;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 4px #FFD700;
+}
+
+/* Flash do raio */
+.flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF; /* Cor do flash */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* O flash não interfere com a interação do usuário */
+    transition: opacity 0.1s ease-in-out;
+}
+
+.flash.active {
+    opacity: 1; /* Mostra o flash */
+    animation: flash-animation 0.3s forwards; /* Animação do flash */
+}
+
+/* Animação do raio */
+@keyframes flash-animation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+

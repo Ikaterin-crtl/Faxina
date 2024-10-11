@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanderia - Desbravadores da Limpeza</title>
+    <link rel="stylesheet" href="comodos.css">
+    <style>
+        /* Ajuste o estilo do ícone de level up */
+        .level-up-icon {
+            width: 200px; /* Aumente o tamanho conforme necessário */
+            margin: 20px auto; /* Centraliza o ícone */
+            display: none; /* Oculto inicialmente */
+        }
+        /* Centraliza o ícone da cozinha */
+        .icon-central {
+            width: 200px; /* Aumente o tamanho conforme necessário */
+            margin: 20px auto; /* Margem para espaçamento */
+            display: none; /* Oculto inicialmente */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="titulo">Lavanderia</h1> <!-- Título em runas -->
+        <img src="icons/dia-das-bruxas.gif" alt="Ícone da Lavanderia" class="icon-central"> <!-- Ícone centralizado -->
+
+        <!-- Lista de itens de limpeza da lavanderia -->
+        <ul class="itens-limpeza">
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/espelho.gif" alt="Limpar Espelhos" class="item-icon"> Limpar espelhos e janelas
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/aspirador-de-po.gif" alt="Varrer Chão" class="item-icon"> Varrer chão
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/vassoura-de-bruxa.gif" alt="Limpar Robô" class="item-icon"> Limpar o robô
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/maquina-de-lavar-inteligente.gif" alt="Limpar Lava Louças" class="item-icon"> Limpar lava louças
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/lixo.gif" alt="Tirar Lixo" class="item-icon"> Tirar o lixo e colocar sacola
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/limpeza.gif" alt="Limpar Superfícies" class="item-icon"> Limpar superfícies
+            </li>
+            <li class="item" onclick="levelUp(this)">
+                <img src="icons/sandalias-de-dedo.gif" alt="Organizar Sapatos" class="item-icon"> Organizar sapatos e objetos soltos
+            </li>
+        </ul>
+    </div>
+        <!-- Ícone de Level Up, inicialmente oculto -->
+<img src="icons/gato.gif" alt="Ícone de Level Up" class="level-up-icon" style="display: none;">
+
+   
+    <script>
+        // Função que simula um "level up" ao clicar no item
+        function levelUp(element) {
+            element.classList.add('level-up'); // Adiciona a classe de animação
+            setTimeout(() => {
+                element.remove(); // Remove o elemento do DOM após a animação
+                
+                // Verifica se ainda existem itens na lista
+                const items = document.querySelectorAll('.itens-limpeza .item');
+                if (items.length === 0) {
+                    // Esconde o título e o ícone da cozinha após a conclusão
+                    document.querySelector('.titulo').style.display = 'none'; // Esconde o título
+                    document.querySelector('.icon-central').style.display = 'none'; // Esconde o ícone da cozinha
+                    document.querySelector('.level-up-icon').style.display = 'block'; // Mostra o ícone de Level Up
+                }
+            }, 600); // Tempo que deve coincidir com a duração da animação
+        }
+    </script>
+    
+    
+</body>
+</html>

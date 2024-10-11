@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desbravadores da Limpeza</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte estilo de runas e pixel -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Desbravadores da Limpeza</h1> <!-- Título em fonte de runas -->
+        <img src="icons/bola-de-cristal-unscreen.gif" alt="Escudo de Limpeza" class="icon-central"> <!-- Ícone no centro -->
+        <button class="botao" onclick="iniciarAventura()">Iniciar sua Aventura</button> <!-- Botão pixelizado -->
+    </div>
+
+    <!-- Flash do raio -->
+    <div class="flash"></div>
+
+    <script>
+        function iniciarAventura() {
+            window.location.href = 'comodos.html'; // Redireciona para a próxima página
+        }
+
+        // Função para simular o raio após 5 segundos
+        setTimeout(function() {
+            document.querySelector('.flash').classList.add('active'); // Ativa o flash
+            setTimeout(function() {
+                document.querySelector('.flash').classList.remove('active'); // Remove o flash
+            }, 300); // Duração do flash
+        }, 5000); // Espera de 5 segundos antes do flash
+    </script>
+</body>
+</html>

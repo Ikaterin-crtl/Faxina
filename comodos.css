@@ -1,0 +1,117 @@
+/* Estilos gerais para todos os cômodos */
+body {
+    background-color: white;
+    color: black;
+    font-family: 'MedievalSharp', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Ícone do cômodo */
+.icon-central {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Lista de itens de limpeza */
+.itens-limpeza {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada item da lista de limpeza */
+.itens-limpeza .item {
+    font-size: 18px;
+    color: #FFD700; /* Dourado para o texto */
+    margin: 20px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.itens-limpeza .item:hover {
+    color: #FFF;
+    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
+}
+
+/* Ícone para cada item */
+.item-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+/* Efeito de Level Up */
+.level-up {
+    color: #00FF00; /* Cor verde para o efeito de "Level Up" */
+    transform: scale(1.2);
+    transition: transform 0.5s, color 0.5s;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    .itens-limpeza .item {
+        flex-direction: column; /* Coloca ícone e texto em coluna */
+        align-items: center; /* Centraliza os itens */
+        margin: 10px 0; /* Espaçamento vertical */
+    }
+
+    .item-icon {
+        margin-bottom: 5px; /* Espaço abaixo do ícone */
+    }
+    
+    .titulo {
+        font-size: 28px; /* Tamanho do título reduzido em dispositivos móveis */
+    }
+
+    .icon-central {
+        width: 120px; /* Tamanho do ícone central ajustado */
+    }
+}
+/* Animação de explosão */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.5;
+    }
+    75% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+
+.level-up-icon {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    margin-top: 20px;
+}

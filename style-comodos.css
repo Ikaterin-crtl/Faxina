@@ -1,0 +1,83 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive; /* Fonte estilo pixel */
+    background-color: #ffffff; /* Fundo branco */
+    color: #000; /* Texto preto */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Preenche a altura total da tela */
+    text-align: center; /* Centraliza o texto */
+}
+
+.titulo {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 32px; /* Tamanho da fonte do título */
+    color: #000; /* Cor do texto do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.icon-central {
+    display: block; /* Para que o ícone se comporte como um bloco */
+    margin: 20px auto; /* Centraliza horizontalmente com margens automáticas */
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 30px;
+}
+
+.comodos {
+    display: flex; /* Usando flexbox para layout */
+    flex-wrap: wrap; /* Permite que os ícones dos cômodos se movam para a próxima linha */
+    justify-content: center; /* Centraliza os ícones dos cômodos */
+    gap: 20px; /* Espaço entre os ícones */
+}
+
+.comodo {
+    display: flex;
+    flex-direction: column; /* Alinha ícones e textos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    cursor: pointer; /* Mostra que é clicável */
+}
+
+.icon-comodo {
+    width: 80px; /* Tamanho dos ícones dos cômodos */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 10px; /* Espaço abaixo do ícone do cômodo */
+}
+
+.comodo p {
+    font-size: 18px; /* Tamanho do texto dos cômodos */
+    color: #000; /* Cor do texto dos cômodos */
+}
+
+/* Media query para telas menores (smartphones) */
+@media (max-width: 768px) {
+    .comodos {
+        flex-direction: column; /* Empilha os cômodos verticalmente */
+        align-items: center;
+    }
+
+    .comodo {
+        width: 100%; /* Cada cômodo ocupa a largura total */
+        margin-bottom: 20px; /* Espaço entre os cômodos */
+    }
+
+    .icon-comodo {
+        width: 100px; /* Ajuste do tamanho do ícone em telas menores */
+        height: auto;
+    }
+
+    .titulo {
+        font-size: 24px; /* Diminui o tamanho do título em telas pequenas */
+    }
+}
